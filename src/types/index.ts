@@ -17,5 +17,5 @@ export type BlogPost = {
     eyecatch:string,
     description:string,
     detail:string,
-    date:Date,
+    date:string,
 }

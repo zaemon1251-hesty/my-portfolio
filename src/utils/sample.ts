@@ -1,9 +1,10 @@
 import { Article, BlogPost, Product } from "../types";
 import { STATIC_IMAGE } from "./constants";
+import { formatDate } from "./funcs";
 
 export const AboutSample:Article = {
     title: "about",
-    eyecatch: STATIC_IMAGE,
+    eyecatch: "/public/vercel.svg",
     detail: `
     <h1 id="sample-markdown">Sample Markdown</h1>
     <p>This is some basic, sample markdown.</p>
@@ -50,7 +51,7 @@ export const BlogPostSample:BlogPost = {
     title:"インターン参加しました",
     description:"2021/09/18~21 サイバーエージェントの機械学習＆バックエンド３daysインターンにさんかしました",
     eyecatch:"public/vercel.svg",
-    date:new Date(),
+    date:formatDate(new Date()),
     detail:`
     <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
       This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however looks very similar to real text. The important factor when using filler text is that the text looks realistic otherwise it will not look very good.<br /><br />

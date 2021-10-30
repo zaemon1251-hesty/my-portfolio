@@ -4,7 +4,7 @@ import { formatDate } from "../../utils/funcs";
 type Props = {
     title: string,
     src: string,
-    date :Date,
+    date :string,
     children?: ReactNode
 }
 
@@ -21,7 +21,7 @@ export const BlogSection: React.VFC<Props> = (props) => {
   <div className="max-w-screen-md px-4 md:px-8 mx-auto">
     <h2 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center mb-4 md:mb-6">{title}</h2>
     <span className="font-light text-sm text-gray-600">
-            {formatDate(date)}
+            {date}
     </span>
 
     <div className="bg-gray-100 overflow-hidden rounded-lg shadow-lg relative mb-6 md:mb-8">

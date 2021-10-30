@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { useEffect } from "react";
 import { BlogPostsTemplate } from "../../components/templates/BlogPostsTemplate";
 import { BlogPost } from "../../types";
 import { BlogPostsSample } from "../../utils/sample";
@@ -10,6 +11,9 @@ type StaticProps = {
 export const BlogPostsPage:NextPage<StaticProps> = ({
     blogPosts
 }) =>{
+    useEffect(() => {
+        console.log(blogPosts);
+    });
     return (
         <BlogPostsTemplate blogPosts={blogPosts} />
     );

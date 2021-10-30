@@ -1,6 +1,7 @@
 import { BlogPost } from "../../types";
 import Link from "next/link"
 import { formatDate } from "../../utils/funcs";
+import { useEffect } from "react";
 
 type Props = {
     blog: BlogPost
@@ -18,7 +19,7 @@ export const BlogCard: React.VFC<Props> = ({
                 </a>
                 </Link>
                 <div className="flex flex-col gap-2 p-4 lg:p-6">
-                <span className="text-gray-400 text-sm">{formatDate(blog.date)}</span>
+                <span className="text-gray-400 text-sm">{blog.date}</span>
 
                 <h2 className="text-gray-800 text-xl font-bold">
                     <Link href={`/blog/post/${blog.id}`} >

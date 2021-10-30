@@ -14,7 +14,7 @@ export const AboutSection: React.VFC<Props> = (props) => {
         <>
             <section className="text-gray-600 body-font">
                 <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-                    <Image className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt={alt} src={src} />
+                    <Image width={647} height={400} className="object-cover object-center rounded" alt={alt} src={src} />
                     <div className="text-center lg:w-2/3 w-full">
                     <h2 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">You Are (Not) Alone</h2>
                     <p className="mb-8 leading-relaxed">Yor Are (Not) Happy</p>
