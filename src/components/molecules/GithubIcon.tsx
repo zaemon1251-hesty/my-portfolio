@@ -1,7 +1,7 @@
 type Props = {
 };
 
-export const githubIcon: React.VFC<Props> = (props) => {
+export const GithubIcon: React.VFC<Props> = () => {
   return (
     <svg viewBox="0 0 27 27" width="30" height="30">
       <path

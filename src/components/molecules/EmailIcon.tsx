@@ -1,9 +1,7 @@
 type Props = {
 };
 
-export const emailIcon: React.VFC<Props> = (props) => {
-  const {} = props;
-
+export const EmailIcon: React.VFC<Props> = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

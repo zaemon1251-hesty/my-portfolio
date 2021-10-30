@@ -1,9 +1,7 @@
 type Props = {
 };
 
-export const twitterIcon: React.VFC<Props> = (props) => {
-  const {} = props;
-
+export const TwitterIcon: React.VFC<Props> = () => {
   return (
     <svg viewBox="0 0 27 27" width="30" height="30">
       <path
