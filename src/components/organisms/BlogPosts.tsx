@@ -18,9 +18,9 @@ export const BlogPosts: React.VFC<Props> = ({
                 </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-6 xl:gap-8">
                     <ul>
-                    {blogPosts.map((blog) => {
+                    {blogPosts.map((blog) => (
                         <BlogCard blog={blog} />
-                    })}
+                    ))}
                     </ul>
                 </div>
             </div>

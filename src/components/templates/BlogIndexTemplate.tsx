@@ -7,7 +7,7 @@ type Props = {
     title:string,
     eyecatch:string,
     detail:string,
-    date:Date,
+    date:string,
 };
 
 export const BlogIndexTemplate: React.VFC<Props> = ({

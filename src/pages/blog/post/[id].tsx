@@ -17,7 +17,7 @@ export const BlogIndexPage:NextPage<BlogPost> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-    const paths = BlogPostsSample.map((BlogPost) => `/blog/${BlogPost.id}`)
+    const paths = BlogPostsSample.map((BlogPost) => `/blog/post/${BlogPost.id}`)
     return { paths, fallback:false }
 }
 
