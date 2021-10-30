@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { STATIC_IMAGE } from "../../utils/constants"
 
 type Props = {
   children?: React.ReactNode
@@ -8,7 +9,7 @@ type Props = {
   type?: string
 }
 
-export const Meta: React.VFC<Props> = (props) => {
+export const MyMeta: React.VFC<Props> = (props) => {
   const { image, type, children } = props
   const description = props.description ?? ""
   const title = props.title ? props.title : `mori.Z`
@@ -23,7 +24,7 @@ export const Meta: React.VFC<Props> = (props) => {
         content={
           image
             ? image
-            : "https://tiny-images-mori.s3.ap-northeast-1.amazonaws.com/2021-01-06+16.43.19.jpg"
+            : STATIC_IMAGE
         }
       />
       <meta name="twitter:card" content="summary_large_image" />
@@ -35,7 +36,7 @@ export const Meta: React.VFC<Props> = (props) => {
         content={
           image
             ? image
-            : "https://tiny-images-mori.s3.ap-northeast-1.amazonaws.com/2021-01-06+16.43.19.jpg"
+            : STATIC_IMAGE
         }
       />
       {children}
