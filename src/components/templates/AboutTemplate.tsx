@@ -1,14 +1,25 @@
 import { MyHeader } from '../organisms/MyHeader';
-import { aboutSection } from '../organisms/aboutSection';
+import { AboutSection } from '../organisms/AboutSection';
+import { Article } from '../../types';
+import { MyMeta } from '../organisms/MyMeta';
+import { HOST } from '../../utils/constants';
 
-type Props = {
-}
 
-export const AboutTemplate: React.VFC<Props> = () => {
+export const AboutTemplate: React.VFC<Article> = ({
+    title,
+    eyecatch,
+    detail
+}) => {
+    const src = eyecatch ? eyecatch : "public/vercel.svg";
+
     return (
-        <div>
+        <>
+            <MyMeta title={HOST + " / " + title} />
             <MyHeader />
-            <aboutSection src="../../../public/vercel.svg" />
-        </div>
+            <AboutSection src={src} >
+                <div dangerouslySetInnerHTML={{ __html: detail }}>
+                </div>
+            </AboutSection>
+        </>
     )
 }
