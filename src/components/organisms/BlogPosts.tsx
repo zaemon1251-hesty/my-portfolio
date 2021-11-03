@@ -12,6 +12,7 @@ export const BlogPosts: React.VFC<Props> = ({
     if (!blogPosts) {
         blogPosts = [BlogPostSample]
     }
+    let i = 0;
     return (
         <div className="bg-white py-6 sm:py-8 lg:py-12">
             <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
@@ -23,7 +24,9 @@ export const BlogPosts: React.VFC<Props> = ({
                 <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-6 xl:gap-8">
                     <ul>
                     {blogPosts.map((blog) => (
-                        <BlogCard blog={blog} />
+                        <li key={i++}>
+                            <BlogCard blog={blog} />
+                        </li>
                     ))}
                     </ul>
                 </div>

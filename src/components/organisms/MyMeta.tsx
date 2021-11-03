@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { STATIC_IMAGE } from "../../utils/constants"
+import { LIGHT_IMAGE, STATIC_IMAGE } from "../../utils/constants"
 
 type Props = {
   children?: React.ReactNode
