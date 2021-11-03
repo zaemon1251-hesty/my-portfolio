@@ -24,7 +24,7 @@ export const BlogPostSample:BlogPost = {
     title:"",
     description:"",
     eyecatch:"",
-    date:formatDate(new Date()),
+    date:"2021/11/03",
     detail:``
 };
 

@@ -29,12 +29,12 @@ export const preProcess = (datas:any, cmstype:CmsType) => {
 const res2BlogPost = (data:any) => {
     try {
         const result:BlogPost = {
-            id:data["id"],
-            title:data["title"],
-            eyecatch:data["eyecatch"],
-            description:data["description"],
-            detail:data["detail"],
-            date:data["updated_at"],
+            id:String(data["id"]),
+            title:data["title"] || "",
+            eyecatch:data["eyecatch"] || "#",
+            description:data["description"] || "",
+            detail:data["detail"] || "",
+            date:data["updated_at"] || "",
         };
         return result;
     } catch(e) {
@@ -45,9 +45,9 @@ const res2BlogPost = (data:any) => {
 const res2Article = (data:any) => {
     try {
         const result:Article = {
-            title:data["title"],
-            eyecatch:data["eyecatch"],
-            detail:data["detail"],
+            title:data["title"] || "",
+            eyecatch:data["eyecatch"] || "",
+            detail:data["detail"] || "",
         }
         return result;
     } catch(e) {
