@@ -6,7 +6,7 @@ import { ProductsCollection } from "../organisms/ProductsCollection";
 import { ProfileCard } from "../organisms/ProfileCard";
 
 type Props = {
-    products:Product[]
+    products?:Product[]
 }
 
 

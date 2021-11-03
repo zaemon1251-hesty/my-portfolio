@@ -1,13 +1,17 @@
 import { BlogPost } from "../../types";
+import { BlogPostSample } from "../../utils/sample";
 import { BlogCard } from "../molecules/BlogCard";
 
 type Props = {
-    blogPosts: BlogPost[],
+    blogPosts?: BlogPost[],
 }
 
 export const BlogPosts: React.VFC<Props> = ({
     blogPosts
 }) => {
+    if (!blogPosts) {
+        blogPosts = [BlogPostSample]
+    }
     return (
         <div className="bg-white py-6 sm:py-8 lg:py-12">
             <div className="max-w-screen-xl px-4 md:px-8 mx-auto">

@@ -1,11 +1,12 @@
 import { GetStaticProps, NextPage } from "next";
 import { useEffect } from "react";
 import { BlogPostsTemplate } from "../../components/templates/BlogPostsTemplate";
+import { getBlogPosts } from "../../lib/api";
 import { BlogPost } from "../../types";
 import { BlogPostsSample } from "../../utils/sample";
 
 type StaticProps = {
-    blogPosts:BlogPost[]
+    blogPosts?:BlogPost[]
 }
 
 export const BlogPostsPage:NextPage<StaticProps> = ({
@@ -19,9 +20,10 @@ export const BlogPostsPage:NextPage<StaticProps> = ({
     );
 };
 
-export const getStaticProps:GetStaticProps<StaticProps> = (context) => {
-    const props:StaticProps = {
-        blogPosts:BlogPostsSample
+export const getStaticProps:GetStaticProps<StaticProps> = async (context) => {
+    const datas = await getBlogPosts();
+    let props:StaticProps = {
+        blogPosts:datas
     }
     return { props }
 }

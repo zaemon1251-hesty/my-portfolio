@@ -5,7 +5,7 @@ import { MyHeader } from "../organisms/MyHeader"
 import { MyMeta } from "../organisms/MyMeta"
 
 type Props = {
-    blogPosts:BlogPost[]
+    blogPosts?:BlogPost[]
 } 
 
 export const BlogPostsTemplate:React.VFC<Props> = ({

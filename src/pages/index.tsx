@@ -1,10 +1,11 @@
 import { GetStaticProps, NextPage } from "next";
 import { IndexTemplate } from "../components/templates/IndexTemplate";
+import { getContents, getProducts } from "../lib/api";
 import { Product } from "../types";
 import { ProductsSample } from "../utils/sample";
 
 type StaticProps = {
-  products: Product[]
+  products?: Product[]
 };
 
 export const IndexPage: NextPage<StaticProps> = ({
@@ -13,9 +14,9 @@ export const IndexPage: NextPage<StaticProps> = ({
   return <IndexTemplate products={products} />;
 };
 
-export const getStaticProps: GetStaticProps<StaticProps> = (context) => {
+export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   const props:StaticProps = {
-    products: ProductsSample
+    products: await getProducts()
   };
   return { props };
 };
