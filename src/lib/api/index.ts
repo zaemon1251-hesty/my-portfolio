@@ -41,7 +41,7 @@ export const getBlogPosts = async () => {
 export const getContents = async (type:CmsType) => {
     try {
         return await fetch(`${CMS_URL}/${type}`)
-        .then((res) => res.json())
+        .then((res) => JSON.parse(JSON.stringify(res.json())))
         .then((datas) => preProcess(datas, type))
         .catch(() => undefined);
     } catch(e) {

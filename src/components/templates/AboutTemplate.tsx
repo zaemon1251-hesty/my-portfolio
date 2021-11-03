@@ -2,7 +2,7 @@ import { MyHeader } from '../organisms/MyHeader';
 import { AboutSection } from '../organisms/AboutSection';
 import { Article } from '../../types';
 import { MyMeta } from '../organisms/MyMeta';
-import { HOST } from '../../utils/constants';
+import { HOST, LIGHT_IMAGE, NOIMAGE } from '../../utils/constants';
 
 
 export const AboutTemplate: React.VFC<Article> = ({
@@ -10,7 +10,7 @@ export const AboutTemplate: React.VFC<Article> = ({
     eyecatch,
     detail
 }) => {
-    const src = eyecatch ? eyecatch : "public/vercel.svg";
+    const src = eyecatch ? eyecatch : NOIMAGE;
 
     return (
         <>
