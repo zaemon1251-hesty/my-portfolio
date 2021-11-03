@@ -1,5 +1,6 @@
 import { Product } from "../../types";
 import Link from 'next/link';
+import { NOIMAGE } from "../../utils/constants";
 
 type Props = {
     product: Product
@@ -10,7 +11,7 @@ export const ProductCard: React.VFC<Props> = ({
 }) => {
     const title = product.title;
     const description = product.description;
-    const src = product.src ? product.src : "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700";
+    const src = product.src ? product.src : NOIMAGE;
     const href = product.href ? product.href : "#";
     return (
         <Link href={href}>  

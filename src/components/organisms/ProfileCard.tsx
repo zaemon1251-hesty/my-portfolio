@@ -3,6 +3,7 @@ import { GithubIcon } from "../molecules/GithubIcon";
 import { IconWrapper } from "../molecules/IconWrapper";
 import { TwitterIcon } from "../molecules/TwitterIcon";
 import Image from "next/image"
+import { STATIC_IMAGE } from "../../utils/constants";
 
 type Props = {
 }
@@ -12,8 +13,8 @@ export const ProfileCard: React.VFC<Props> = () => {
     <div className="flex flex-col items-center justify-center p-4 bg-white border border-gray-200 rounded-lg shadow-lg">
       <div className="w-40 h-40 overflow-hidden border border-gray-200 rounded-full shadow-xl">
         <Image
-          src="/neko.jpg"
-          alt="neko icon"
+          src={STATIC_IMAGE}
+          alt="sample"
           className="object-contain w-40 h-40"
           width="160"
           height="160"
