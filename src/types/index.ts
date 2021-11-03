@@ -19,3 +19,5 @@ export type BlogPost = {
     detail:string,
     date:string,
 }
+
+export type CmsType = ("blog_posts"| "articles" | "products");
