@@ -17,7 +17,7 @@ export const AboutPage:NextPage<Article> = ({
 
 export const getStaticProps: GetStaticProps<Article> = async (context) => {
     const artilcles = await getArticles();
-    const props = artilcles ? artilcles[0]:AboutSample
+    const props = artilcles ? artilcles[0] : AboutSample;
     return { props }
 }
 
