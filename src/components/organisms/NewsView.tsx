@@ -2,20 +2,21 @@ import { newsArticle } from "../../types";
 import { NewsCard } from "../molecules/NewsCard";
 
 type Props = {
-    newsSets?: newsArticle[],
+    newsSet?: newsArticle[],
 }
 
 export const NewsView: React.VFC<Props> = ({
-    newsSets
+    newsSet
 }) => {
-    if (!newsSets) {
-        newsSets = []
+    if (!newsSet) {
+        newsSet = []
     }
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
+                <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold m-5">Topic News</h2>
                 <div className="flex flex-wrap -m-4">
-                    {newsSets.map((article, index) => (
+                    {newsSet.map((article, index) => (
                         <NewsCard article={article} i={index} />
                     )) }
                 </div>
