@@ -21,3 +21,18 @@ export type BlogPost = {
 }
 
 export type CmsType = ("blog_posts"| "articles" | "products");
+
+export type newsArticle = {
+    author: string;
+    title: string;
+    publishedAt: string;
+    url: string;
+    urlToImage: string;
+  }
+
+export type newsRequestParams = {
+    [key :string] : string | undefined,
+    "country"? : string,
+    "pageSize"? : string,
+    "apiKey"? : string
+};

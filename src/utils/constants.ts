@@ -3,3 +3,4 @@ export const STATIC_IMAGE = "https://tiny-images-mori.s3.ap-northeast-1.amazonaw
 export const LIGHT_IMAGE = "/iconmonstr-accessibility-2-240.png";
 export const NOIMAGE = "/iconmonstr-picture-1-240.png";
 export const CMS_URL = "https://zaemon1251-hesty.herokuapp.com/api";
+export const NEWS_URL = "https://newsapi.org/v2/top-headlines";
