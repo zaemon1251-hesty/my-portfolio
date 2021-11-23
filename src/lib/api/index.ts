@@ -1,7 +1,7 @@
 import { env } from "process";
 import { CmsType, Product, Article, BlogPost, newsRequestParams } from "../../types";
 import { CMS_URL, NEWS_URL } from "../../utils/constants";
-import { any2array, preProcess, processArticles, processBlogPosts, processProducts } from "../../utils/funcs";
+import { any2array, preProcess, processArticles, processBlogPosts, processProducts, res2tweetImgs } from "../../utils/funcs";
 
 export const getProducts = async () => {
     const cmstype:CmsType = "products";
@@ -72,5 +72,17 @@ export const getNews = async () => {
         .then((data) => data?.articles);
     } catch(e) {
         return undefined;
+    }
+}
+
+export const getTweetImgs = async (screen_name: string, max_id?: string) =>  {
+    let endpoint = `${process.env.REACT_APP_API_ENDPOINT_URL}/fav?name=${screen_name}`;
+    if (max_id) endpoint += `&maxid=${max_id}`;
+    try {
+        return await fetch(endpoint)
+            .then((res) => res.json())
+            .then((data) => res2tweetImgs(data));
+    } catch(e) {
+        throw e;
     }
 }

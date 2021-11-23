@@ -1,4 +1,4 @@
-import { CmsType, BlogPost, Article, Product } from "../types"
+import { CmsType, BlogPost, Article, Product, tweetImgs } from "../types"
 import { AboutSample, BlogPostSample, ProductSample } from "./sample";
 
 export const formatDate = (date:Date) =>{
@@ -94,4 +94,18 @@ export const processProducts = (datas:any[]) => {
         results.push(res2Product(data))
     });
     return results;
+}
+
+export const res2tweetImgs = (data:any) => {
+    try {
+        const result:tweetImgs = {
+            url: data["url"],
+            height: data["height"],
+            source: data["source"],
+            max_id: data["max_id"]
+        }
+        return result;
+    } catch(e) {
+        throw e;
+    }
 }
