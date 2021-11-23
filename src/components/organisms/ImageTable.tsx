@@ -3,29 +3,29 @@ import { tweetImgs, typeRaneItems } from "../../types";
 import ImageList from "../molecules/ImageList";
 
 type typeImageTableProps = {
-    images: tweetImgs;
+    images?: tweetImgs;
 };
 
 export const ImageTable : React.VFC<typeImageTableProps> = (props) => {
-    const [raneNum, setRaneNum] = useState(
-        window.innerWidth > 600 ? Math.floor(window.innerWidth / 300) : 2
-    );
+    const [raneNum, setRaneNum] = useState(3);
 
-    useEffect(
-        () => {
-            console.log("componentDidMount");
-            let queue: NodeJS.Timeout;
-            window.addEventListener("resize", () => {
-                clearTimeout(queue);
-                queue = setTimeout(() => {
-                    const newRaneNum = window.innerWidth > 600 ? Math.floor(window.innerWidth / 300) : 2;
-                    setRaneNum(newRaneNum);
-                }, 500);
-            });
-        }, 
-        [props]
-    );
-
+    if (process.browser) {
+        useEffect(
+            () => {
+                console.log("componentDidMount");
+                let queue: NodeJS.Timeout;
+                window.addEventListener("resize", () => {
+                    clearTimeout(queue);
+                    queue = setTimeout(() => {
+                        const newRaneNum = window.innerWidth > 600 ? Math.floor(window.innerWidth / 300) : 2;
+                        setRaneNum(newRaneNum);
+                    }, 500);
+                });
+            }, 
+            [props]
+        );
+    }
+    
     return (
         <div className="flex m-1">
             {createRaneItems(raneNum, props.images).map((items: typeRaneItems[], index: number) => {
@@ -40,8 +40,9 @@ export const ImageTable : React.VFC<typeImageTableProps> = (props) => {
 }
 export default ImageTable;
 
-const createRaneItems = (rane_num: number, items: tweetImgs): typeRaneItems[][] => {
-    const RaneItems: typeRaneItems[][] = Array(rane_num).fill([]).map(_i=>([]))
+const createRaneItems = (rane_num: number, items?: tweetImgs): typeRaneItems[][] => {
+    const RaneItems: typeRaneItems[][] = Array(rane_num).fill([]).map(_i=>([]));
+    if (!items||!items.url) return RaneItems;
     const RaneHeights: number[] = Array(rane_num).fill(0);
     items.url.forEach((item: string, index: number) => {
         const minHeightIndex = searchMinHeightIndex(RaneHeights);

@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from "next";
 import { IndexTemplate } from "../components/templates/IndexTemplate";
 import { getContents, getNews, getProducts } from "../lib/api";
 import { newsArticle, Product } from "../types";
-import { ProductsSample } from "../utils/sample";
+import { newsArticlesSample, ProductsSample, tweetImgsSample } from "../utils/sample";
 
 type StaticProps = {
   products?: Product[],
@@ -18,8 +18,8 @@ export const IndexPage: NextPage<StaticProps> = ({
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   const props:StaticProps = {
-    products: await getProducts(),
-    newsArticles: await getNews(),
+    products: await getProducts() || ProductsSample,
+    newsArticles: await getNews() || newsArticlesSample,
   };
   return { 
     props,

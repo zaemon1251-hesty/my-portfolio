@@ -25,7 +25,7 @@ export const InputForm : React.VFC<typeInputFormProps> = (props) => {
                 <br />
                 <br />
                 その人がいいねした画像が良い感じに表示されます。
-                <a href="https://zenn.dev/hukurouo/books/iineum-hands-on"> 参考サイト </a>
+                <a href="https://zenn.dev/hukurouo/books/iineum-hands-on" className="text-green-400"> 参考サイト </a>
             </p>
             </div>
             <div className="flex mb-5 mx-auto max-w-xs">

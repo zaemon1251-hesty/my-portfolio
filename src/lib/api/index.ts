@@ -78,11 +78,12 @@ export const getNews = async () => {
 export const getTweetImgs = async (screen_name: string, max_id?: string) =>  {
     let endpoint = `${process.env.REACT_APP_API_ENDPOINT_URL}/fav?name=${screen_name}`;
     if (max_id) endpoint += `&maxid=${max_id}`;
+    console.log(endpoint, screen_name, max_id);
     try {
         return await fetch(endpoint)
             .then((res) => res.json())
             .then((data) => res2tweetImgs(data));
     } catch(e) {
-        throw e;
+        return undefined;
     }
 }

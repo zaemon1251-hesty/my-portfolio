@@ -15,4 +15,5 @@ export const MESSAGES = {
     load:"loading...",
     error:"取得に失敗しました。データが空か、スクリーンネームが間違っているかもしれません。",
     nofav:"いいねした画像がありませんでした",
+    success:"done"
 };

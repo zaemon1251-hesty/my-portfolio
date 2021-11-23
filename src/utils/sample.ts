@@ -1,4 +1,4 @@
-import { Article, BlogPost, Product } from "../types";
+import { Article, BlogPost, newsArticle, Product, tweetImgs } from "../types";
 import { STATIC_IMAGE } from "./constants";
 import { formatDate } from "./funcs";
 
@@ -31,3 +31,14 @@ export const BlogPostSample:BlogPost = {
 export const BlogPostsSample:BlogPost[] = [
     BlogPostSample
 ];
+
+export const tweetImgsSample = {} as tweetImgs;
+
+export const tweetImgsInit:tweetImgs = {
+    url: [],
+    height: [],
+    source: [],
+    max_id: ""
+};
+
+export const newsArticlesSample = [{} as newsArticle]

@@ -9,7 +9,7 @@ export const NewsView: React.VFC<Props> = ({
     newsSet
 }) => {
     if (!newsSet) {
-        newsSet = []
+        newsSet = [] as newsArticle[]
     }
     return (
         <section className="text-gray-600 body-font">
