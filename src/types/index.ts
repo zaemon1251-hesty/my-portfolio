@@ -28,11 +28,23 @@ export type newsArticle = {
     publishedAt: string;
     url: string;
     urlToImage: string;
-  }
+}
 
 export type newsRequestParams = {
     [key :string] : string | undefined,
     "country"? : string,
     "pageSize"? : string,
     "apiKey"? : string
+};
+
+export type tweetImgs = {
+    url: string[];
+    height: number[];
+    source: string[];
+    max_id: string;
+}
+
+export type typeRaneItems = {
+    url: string;
+    source: string;
 };
