@@ -17,7 +17,7 @@ export const ImageTable : React.VFC<typeImageTableProps> = (props) => {
                 window.addEventListener("resize", () => {
                     clearTimeout(queue);
                     queue = setTimeout(() => {
-                        const newRaneNum = window.innerWidth > 600 ? Math.floor(window.innerWidth / 300) : 2;
+                        const newRaneNum = window.innerWidth > 600 ? Math.floor(window.innerWidth / 300) : 1;
                         setRaneNum(newRaneNum);
                     }, 500);
                 });

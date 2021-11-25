@@ -38,7 +38,7 @@ export const tweetImgsInit:tweetImgs = {
     url: [],
     height: [],
     source: [],
-    max_id: ""
+    max_id: undefined
 };
 
 export const newsArticlesSample = [{} as newsArticle]

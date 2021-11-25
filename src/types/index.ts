@@ -41,7 +41,7 @@ export type tweetImgs = {
     url: string[];
     height: number[];
     source: string[];
-    max_id: string;
+    max_id?: string;
 }
 
 export type typeRaneItems = {

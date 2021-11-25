@@ -6,19 +6,19 @@ import { tweetImgsInit } from "../../utils/sample";
 import { InputForm } from "../molecules/InputForm";
 import ImageTable from "./ImageTable";
 
-export const MainTable: React.VFC = () => {
+export const MainTable: React.VFC = (props) => {
     const [message, setMessage] = useState(MESSAGES.init);
 
-    const [images, setImages] = useState(tweetImgsInit)
+    const [images, setImages] = useState(tweetImgsInit);
 
     const [screenName, setScreenName] = useState("");
 
-    if (process.browser) {
-        useEffect(
-            () => {
-                console.log("componentDidMount");
-                let queue: NodeJS.Timeout;
-                window.addEventListener("scroll", () => {
+    useEffect(
+        () => {
+            console.log("like-componentDidMount");
+            let queue: NodeJS.Timeout;
+            if (process.browser) {
+                const loadMore = () => {
                     clearTimeout(queue);
                     queue = setTimeout(() => {
                         const scroll_Y = document.documentElement.scrollTop + window.innerHeight;
@@ -32,11 +32,17 @@ export const MainTable: React.VFC = () => {
                             addIine(screenName);
                         }
                     }, 500);
-                });
-            }, 
-            [setMessage]
-        );
-    }
+                }
+                // イベント追加
+                window.addEventListener("scroll", loadMore);
+                return () => {
+                    // イベント削除
+                    window.removeEventListener("scroll", loadMore);
+                }
+            };
+        }, 
+        [screenName,message]
+    );
 
     const handleSubmit = (screen_name: string) => {
         // 名前が変更されたらimages初期化
