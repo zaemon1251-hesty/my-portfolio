@@ -76,7 +76,7 @@ export const getNews = async () => {
 }
 
 export const getTweetImgs = async (screen_name: string, max_id?: string) =>  {
-    let endpoint = `${process.env.REACT_APP_API_ENDPOINT_URL}/fav?name=${screen_name}`;
+    let endpoint = `${env.REACT_APP_API_ENDPOINT_URL}/fav?name=${screen_name}`;
     if (max_id) endpoint += `&maxid=${max_id}`;
     console.log(endpoint, screen_name, max_id);
     try {
