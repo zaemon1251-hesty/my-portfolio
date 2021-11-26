@@ -32,7 +32,7 @@ export const MyHeader: React.VFC<Props> = () => {
                         </a>
                     </Link>
                     <Link href="/fav">
-                        <a className="m-2 inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 p-10">assignment</a>
+                        <a className="m-2 inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 p-10">view favs</a>
                     </Link>
                 </nav>
             </div>

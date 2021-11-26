@@ -1,7 +1,8 @@
 import { env } from "process";
-import { CmsType, Product, Article, BlogPost, newsRequestParams } from "../../types";
+import useSWR from "swr";
+import { CmsType, Product, Article, BlogPost, newsRequestParams, tweetImgs } from "../../types";
 import { CMS_URL, NEWS_URL } from "../../utils/constants";
-import { any2array, preProcess, processArticles, processBlogPosts, processProducts, res2tweetImgs } from "../../utils/funcs";
+import { any2array, preProcess, processArticles, processBlogPosts, processProducts, isTweetImgs, fetchTypedValue } from "../../utils/funcs";
 
 export const getProducts = async () => {
     const cmstype:CmsType = "products";
@@ -79,11 +80,19 @@ export const getTweetImgs = async (screen_name: string, max_id?: string) =>  {
     let endpoint = `${process.env.REACT_APP_API_ENDPOINT_URL}/fav?name=${screen_name}`;
     if (max_id) endpoint += `&maxid=${max_id}`;
     console.log(endpoint, screen_name, max_id);
-    try {
-        return await fetch(endpoint)
+    // const { data, error } = useSWR(
+    //     endpoint, 
+    //     (url) => fetchTypedValue<tweetImgs>(url, isTweetImgs),
+    //     {
+    //         revalidateOnFocus: false,
+    //         revalidateOnReconnect: false,
+    //         refreshWhenHidden: true
+    //     }
+    // );
+    // console.log(data);
+    // return data ? data : undefined;
+    return await fetch(endpoint)
             .then((res) => res.json())
-            .then((data) => res2tweetImgs(data));
-    } catch(e) {
-        return undefined;
-    }
+            .then((data) => isTweetImgs(data) ? data : undefined)
+            .catch(() => undefined)
 }

@@ -96,7 +96,7 @@ export const processProducts = (datas:any[]) => {
     return results;
 }
 
-export const res2tweetImgs = (data:any) => {
+export const isTweetImgs = (data:any):data is tweetImgs => {
     try {
         const result:tweetImgs = {
             url: data["url"],
@@ -104,8 +104,19 @@ export const res2tweetImgs = (data:any) => {
             source: data["source"],
             max_id: data["max_id"]
         }
-        return result;
+        return true;
     } catch(e) {
-        throw e;
+        console.log("fetch susseeded but type not matched")
+        return false;
     }
+}
+
+// 型限定させた状態でのフェッチ。 今後全てのデータフェッチをこの形式にしたい
+export async function fetchTypedValue<T>  (
+    url: string,
+    typeGuardFn: (obj: any) => obj is T
+): Promise<T | undefined>  {
+    const response = await fetch(url);
+    const response_1 = await response.json();
+    return typeGuardFn(response_1) ? response_1 : undefined;
 }
