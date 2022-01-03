@@ -67,16 +67,20 @@ export const MainTable: React.VFC = (props) => {
 
     const setIineImages = (currentImages:tweetImgs, results?:tweetImgs) => {
         // 現在のimagesに追加
-        if (!results) return;
-        setImages({
-            url: currentImages.url.concat(results.url),
-            height: currentImages.height.concat(results.height),
-            source: currentImages.source.concat(results.source),
-            max_id: String(results.max_id)
-        });
-        if (results.url.length == 0) {
+        if (typeof results === "undefined"){
+            setImages(tweetImgsInit)
+            setMessage(MESSAGES.error);
+        } else if (results.url.length == 0) {
+            setImages(tweetImgsInit)
             setMessage(MESSAGES.nofav);
+
         } else {
+            setImages({
+                url: currentImages.url.concat(results.url),
+                height: currentImages.height.concat(results.height),
+                source: currentImages.source.concat(results.source),
+                max_id: String(results.max_id)
+            });
             setMessage(MESSAGES.init);
         }
     }
