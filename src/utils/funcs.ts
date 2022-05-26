@@ -33,7 +33,7 @@ const res2BlogPost = (data:any) => {
             title:data["title"] || "",
             eyecatch:data["eyecatch"] || "#",
             description:data["description"] || "",
-            detail:data["detail"] || "",
+            detail:data["parsed_detail"] || "",
             date:data["updated_at"] || "",
         };
         return result;
@@ -47,7 +47,7 @@ const res2Article = (data:any) => {
         const result:Article = {
             title:data["title"] || "",
             eyecatch:data["eyecatch"] || "",
-            detail:data["detail"] || "",
+            detail:data["parsed_detail"] || "",
         }
         return result;
     } catch(e) {

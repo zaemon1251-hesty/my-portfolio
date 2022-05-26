@@ -16,7 +16,7 @@ export const AboutTemplate: React.VFC<Article> = ({
         <>
             <MyMeta title={HOST + " / " + title} />
             <MyHeader />
-            <AboutSection src={src} >
+            <AboutSection src={src} title={"ABOUT ME"}>
                 <div dangerouslySetInnerHTML={{ __html: detail }}>
                 </div>
             </AboutSection>

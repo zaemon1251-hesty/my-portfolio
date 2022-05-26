@@ -1,5 +1,6 @@
 import { ReactChild, ReactNode } from "react";
 import { formatDate } from "../../utils/funcs";
+import Image from 'next/image';
 
 type Props = {
     title: string,
@@ -25,10 +26,17 @@ export const BlogSection: React.VFC<Props> = (props) => {
     </span>
 
     <div className="bg-gray-100 overflow-hidden rounded-lg shadow-lg relative mb-6 md:mb-8">
-      <img src={src} loading="lazy" alt="Photo by Minh Pham" className="w-full h-full object-cover object-center" />
+      <Image width={800} height={400} className="object-cover object-center rounded" src={src} />
     </div>
-
-    {children}
+    <div className="w-full">
+      <div id="markdown-area">
+        <div className="container">
+          <div className="sub-container">
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

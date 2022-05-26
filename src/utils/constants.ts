@@ -1,4 +1,4 @@
-export const HOST = "mori.gati";
+export const HOST = "mori-zaemon-portfolio";
 
 export const STATIC_IMAGE = "https://tiny-images-mori.s3.ap-northeast-1.amazonaws.com/Optimized-2021-03-04+19.41.14.jpg";
 
@@ -8,7 +8,7 @@ export const SAKE_IMAGE = "/2020-12-30 18.39.52.jpg";
 
 export const NOIMAGE = "/iconmonstr-picture-1-240.png";
 
-export const CMS_URL = "https://zaemon1251-hesty.herokuapp.com/api";
+export const CMS_URL = "https://zaemon1251-hesty.herokuapp.com/api/cms";
 export const NEWS_URL = "https://newsapi.org/v2/top-headlines";
 export const TWITTER_URL = "https://api.twitter.com";
 

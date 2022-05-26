@@ -2,24 +2,24 @@ import moment from "moment";
 import { newsArticle } from "../../types";
 
 type Props = {
-    i:number,
+    key:number,
     article:newsArticle
 }
 
 export const NewsCard: React.VFC<Props> = ({
-    i,
+    key,
     article
 }) => {
     const time = moment(article.publishedAt || moment.now())
                 .fromNow()
                 .slice(0, 1);
     return (
-        <li key={i} className="xl:w-1/4 md:w-1/2 p-4 list-none">
+        <li key={key} className="xl:w-1/4 md:w-1/2 p-4 list-none">
             <a href={article.url} target="_blank" rel="noopener">
                 <article className="bg-gray-100 p-6 rounded-lg">
                     {article.urlToImage && (
                                 <img 
-                                key={i}
+                                key={key}
                                 src={article.urlToImage}
                                 className="h-40 rounded w-full object-cover object-center mb-6"
                                 alt={`${article.title} image`}

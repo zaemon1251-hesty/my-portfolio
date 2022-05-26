@@ -8,7 +8,7 @@ export type Product = {
 export type Article = {
     title:string,
     eyecatch?:string,
-    detail:string,
+    detail:string, // has html-formated-string rendered from markdown-formated-string
 }
 
 export type BlogPost = {
@@ -16,7 +16,7 @@ export type BlogPost = {
     title:string,
     eyecatch:string,
     description:string,
-    detail:string,
+    detail:string, // has html-formated-string rendered from markdown-formated-string
     date:string,
 }
 
