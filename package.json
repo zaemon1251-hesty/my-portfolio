@@ -1,6 +1,6 @@
 {
   "name": "bc-front",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,25 +11,28 @@
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
     "@types/node": "^16.11.9",
-    "@types/react": "^17.0.35",
+    "@types/react": "^18.0.28",
     "@types/react-infinite-scroller": "^1.2.2",
     "moment": "^2.29.1",
-    "next": "^11.1.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "^13.2.4",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-infinite-scroller": "github:devpascoe/react-infinite-scroller",
     "sass": "^1.52.1",
     "swr": "^1.0.1",
-    "twitter": "^1.7.1",
+    "twitter": "^1.1.0",
     "typescript": "^4.5.2"
   },
   "devDependencies": {
+    "@types/jest": "^28.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "autoprefixer": "^10.3.7",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
+    "jest": "^28.0.0",
     "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.17"
+    "tailwindcss": "^2.2.17",
+    "ts-jest": "^28.0.0"
   }
 }

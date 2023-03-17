@@ -7,47 +7,48 @@ import { any2array, preProcess, processArticles, processBlogPosts, processProduc
 export const getProducts = async () => {
     const cmstype:CmsType = "products";
     try {
-        return await fetch(`${CMS_URL}/${cmstype}`)
-        .then((res) => res.json())
+        return await fetch(`${CMS_URL}/${cmstype}/`)
+        .then((res) => res.json() || {})
         .then((datas) => processProducts(datas))
-        .catch(() => undefined);
+        .catch(() => null);
     } catch(e) {
-        return undefined;
+        return null;
     }
 }
 
 export const getArticles = async () => {
     const cmstype:CmsType = "articles";
+    console.log(`${CMS_URL}/${cmstype}/`)
     try {
-        return await fetch(`${CMS_URL}/${cmstype}`)
-        .then((res) => res.json())
+        return await fetch(`${CMS_URL}/${cmstype}/`)
+        .then((res) => res.json() || {})
         .then((datas) => processArticles(datas))
-        .catch(() => undefined);
+        .catch(() => null);
     } catch(e) {
-        return undefined;
+        return null;
     }
 }
 
 export const getBlogPosts = async () => {
     const cmstype:CmsType = "blog_posts";
     try {
-        return await fetch(`${CMS_URL}/${cmstype}`)
-        .then((res) => res.json())
+        return await fetch(`${CMS_URL}/${cmstype}/`)
+        .then((res) => res.json() || {})
         .then((datas) => processBlogPosts(datas))
-        .catch(() => undefined);
+        .catch(() => null);
     } catch(e) {
-        return undefined;
+        return null;
     }
 }
 
 export const getContents = async (type:CmsType) => {
     try {
-        return await fetch(`${CMS_URL}/${type}`)
-        .then((res) => JSON.parse(JSON.stringify(res.json())))
+        return await fetch(`${CMS_URL}/${type}/`)
+        .then((res) => JSON.parse(JSON.stringify(res.json())) || {})
         .then((datas) => preProcess(datas, type))
-        .catch(() => undefined);
+        .catch(() => null);
     } catch(e) {
-        return undefined;
+        return null;
     }
 };
 
@@ -56,14 +57,14 @@ export const getNews = async () => {
     const params:newsRequestParams = {
         "country" : "jp",
         "pageSize" : String(10),
-        "apiKey" : env.NEWSAPI_KEY
+        "apiKey" : env.NEWSAPI_KEY || null
     };
     const keys:(keyof newsRequestParams)[] = ["country", "pageSize", "apiKey"]
     const uri = new URL(NEWS_URL);
     keys.forEach((item) => {
         const k = item.toString();
         const v = params[item];
-        if (typeof v !== 'undefined'){
+        if ( v !== null){
             uri.searchParams.append(k, v);
         }
     });
@@ -72,7 +73,7 @@ export const getNews = async () => {
         .then((res) => res.json())
         .then((data) => data?.articles);
     } catch(e) {
-        return undefined;
+        return null;
     }
 }
 
@@ -90,9 +91,9 @@ export const getTweetImgs = async (screen_name: string, max_id?: string) =>  {
     //     }
     // );
     // console.log(data);
-    // return data ? data : undefined;
+    // return data ? data : null;
     return await fetch(endpoint)
             .then((res) => res.json())
-            .then((data) => isTweetImgs(data) ? data : undefined)
-            .catch(() => undefined)
+            .then((data) => isTweetImgs(data) ? data : null)
+            .catch(() => null)
 }
