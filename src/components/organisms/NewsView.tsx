@@ -2,7 +2,7 @@ import { newsArticle } from "../../types";
 import { NewsCard } from "../molecules/NewsCard";
 
 type Props = {
-    newsSet?: newsArticle[],
+    newsSet: newsArticle[] | null,
 }
 
 export const NewsView: React.VFC<Props> = ({

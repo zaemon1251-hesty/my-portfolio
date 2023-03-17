@@ -1,5 +1,4 @@
-import { ReactChild, ReactNode } from "react";
-import { formatDate } from "../../utils/funcs";
+import { ReactNode } from "react";
 import Image from 'next/image';
 
 type Props = {
@@ -26,7 +25,7 @@ export const BlogSection: React.VFC<Props> = (props) => {
     </span>
 
     <div className="bg-gray-100 overflow-hidden rounded-lg shadow-lg relative mb-6 md:mb-8">
-      <Image width={800} height={400} className="object-cover object-center rounded" src={src} />
+      <Image alt={""} width={800} height={400} className="object-cover object-center rounded" src={src} />
     </div>
     <div className="w-full">
       <div id="markdown-area">

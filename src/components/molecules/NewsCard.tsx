@@ -19,10 +19,9 @@ export const NewsCard: React.VFC<Props> = ({
                 <article className="bg-gray-100 p-6 rounded-lg">
                     {article.urlToImage && (
                                 <img 
-                                key={key}
-                                src={article.urlToImage}
-                                className="h-40 rounded w-full object-cover object-center mb-6"
-                                alt={`${article.title} image`}
+                                    src={article.urlToImage}
+                                    className="h-40 rounded w-full object-cover object-center mb-6"
+                                    alt={`${article.title} image`}
                                 />
                             )}
                     <div>

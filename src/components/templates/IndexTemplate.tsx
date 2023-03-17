@@ -7,8 +7,8 @@ import { ProductsCollection } from "../organisms/ProductsCollection";
 import { ProfileCard } from "../organisms/ProfileCard";
 
 type Props = {
-    products?:Product[]
-    newsSet?:newsArticle[]
+    products:Product[] | null
+    newsSet: newsArticle[] | null
 }
 
 

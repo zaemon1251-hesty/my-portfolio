@@ -3,7 +3,7 @@ import { BlogPostSample } from "../../utils/sample";
 import { BlogCard } from "../molecules/BlogCard";
 
 type Props = {
-    blogPosts?: BlogPost[],
+    blogPosts: BlogPost[] | null,
 }
 
 export const BlogPosts: React.VFC<Props> = ({

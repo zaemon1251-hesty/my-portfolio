@@ -58,7 +58,7 @@ export const MainTable: React.VFC = (props) => {
     const setViewImgData = (currentImages : tweetImgs , screen_name: string) => {
         getTweetImgs(screen_name, currentImages.max_id)
         .then((res) => {
-            setIineImages(currentImages, res);
+            setIineImages(currentImages, res || undefined);
         })
         .catch(() => {
             setMessage(MESSAGES.error);

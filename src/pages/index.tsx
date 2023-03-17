@@ -5,8 +5,8 @@ import { newsArticle, Product } from "../types";
 import { newsArticlesSample, ProductsSample, tweetImgsSample } from "../utils/sample";
 
 type StaticProps = {
-  products?: Product[],
-  newsArticles?:newsArticle[]
+  products: Product[] | null,
+  newsArticles :newsArticle[] | null
 };
 
 export const IndexPage: NextPage<StaticProps> = ({
@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   return { 
     props,
     revalidate: 60 * 10,
-   };
+  };
 };
 
 export default IndexPage;

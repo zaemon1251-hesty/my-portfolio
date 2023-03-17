@@ -15,7 +15,7 @@ export const BlogCard: React.VFC<Props> = ({
     const src = blog.eyecatch ? blog.eyecatch : NOIMAGE;
     return (
         <div className="flex flex-col md:flex-row items-center border rounded-lg">
-            <Link href={`/blog/post/${blog.id}`} >
+            <Link href={`/blog/post/${blog.id}`} legacyBehavior>
             <a className="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start flex-shrink-0 bg-gray-100 relative">
                 <Image width={192} height={170} src={src} alt="eyecatch" className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200" />
             </a>
@@ -24,7 +24,7 @@ export const BlogCard: React.VFC<Props> = ({
             <span className="text-gray-400 text-sm">{blog.date}</span>
 
             <h2 className="text-gray-800 text-xl font-bold">
-                <Link href={`/blog/post/${blog.id}`} >
+                <Link href={`/blog/post/${blog.id}`} legacyBehavior>
                 <a className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">{blog.title}</a>
                 </Link>
             </h2>
@@ -32,7 +32,7 @@ export const BlogCard: React.VFC<Props> = ({
             <p className="text-gray-500 overflow-ellipsis">{blog.description}</p>
 
             <div>
-                <Link href={`/blog/post/${blog.id}`} >
+                <Link href={`/blog/post/${blog.id}`} legacyBehavior>
                 <a className="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
                 </Link>
             </div>

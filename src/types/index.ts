@@ -31,10 +31,10 @@ export type newsArticle = {
 }
 
 export type newsRequestParams = {
-    [key :string] : string | undefined,
-    "country"? : string,
-    "pageSize"? : string,
-    "apiKey"? : string
+    [key :string] : string | null,
+    "country": string | null,
+    "pageSize" : string | null,
+    "apiKey" : string | null
 };
 
 export type tweetImgs = {

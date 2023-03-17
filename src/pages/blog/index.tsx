@@ -3,10 +3,9 @@ import { useEffect } from "react";
 import { BlogPostsTemplate } from "../../components/templates/BlogPostsTemplate";
 import { getBlogPosts } from "../../lib/api";
 import { BlogPost } from "../../types";
-import { BlogPostsSample } from "../../utils/sample";
 
 type StaticProps = {
-    blogPosts?:BlogPost[]
+    blogPosts :BlogPost[] | null
 }
 
 export const BlogPostsPage:NextPage<StaticProps> = ({

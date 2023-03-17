@@ -14,7 +14,7 @@ export const ProductCard: React.VFC<Props> = ({
     const src = product.src ? product.src : NOIMAGE;
     const href = product.href ? product.href : "#";
     return (
-        <Link href={href}>  
+        <Link href={href} legacyBehavior>  
             <a>
                 <span className="group h-96 block bg-gray-100 rounded-lg overflow-hidden shadow-lg mb-2 lg:mb-3">
                     <img src={src} loading="lazy" alt="Photo by Austin Wade" className="w-full h-full object-cover object-center group-hover:scale-110 transition duration-200" />
