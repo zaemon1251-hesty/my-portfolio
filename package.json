@@ -19,7 +19,6 @@
     "react-dom": "^18.2.0",
     "react-infinite-scroller": "github:devpascoe/react-infinite-scroller",
     "sass": "^1.52.1",
-    "swr": "^1.0.1",
     "twitter": "^1.1.0",
     "typescript": "^4.5.2"
   },

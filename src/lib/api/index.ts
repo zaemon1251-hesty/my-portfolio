@@ -1,5 +1,4 @@
 import { env } from "process";
-import useSWR from "swr";
 import { CmsType, Product, Article, BlogPost, newsRequestParams, tweetImgs } from "../../types";
 import { CMS_URL, NEWS_URL } from "../../utils/constants";
 import { any2array, preProcess, processArticles, processBlogPosts, processProducts, isTweetImgs, fetchTypedValue } from "../../utils/funcs";
