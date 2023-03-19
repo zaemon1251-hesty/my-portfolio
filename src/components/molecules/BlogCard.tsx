@@ -16,7 +16,7 @@ export const BlogCard: React.VFC<Props> = ({
     return (
         <div className="flex flex-col md:flex-row items-center border rounded-lg">
             <Link href={`/blog/post/${blog.id}`} legacyBehavior>
-            <a className="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start flex-shrink-0 bg-gray-100 relative">
+            <a className="group w-full md:w-32 lg:w-48 h-48 block self-start flex-shrink-0 bg-gray-100 relative">
                 <Image width={192} height={170} src={src} alt="eyecatch" className="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200" />
             </a>
             </Link>
