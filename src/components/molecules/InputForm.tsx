@@ -21,11 +21,14 @@ export const InputForm : React.VFC<typeInputFormProps> = (props) => {
         <form onSubmit={handleSubmit}>
             <div className="flex justify-center mb-5 mx-5">
             <p className="md-5">
+                <br />
                 twitterのスクリーンネームを入力してください（例：@pp61551779）
                 <br />
                 <br />
                 その人がいいねした画像が良い感じに表示されます。
-                <a href="https://zenn.dev/hukurouo/books/iineum-hands-on" className="text-green-400"> 参考サイト </a>
+                        <a href="https://zenn.dev/hukurouo/books/iineum-hands-on" className="text-green-400"> 参考サイト </a>
+                        <br />
+                        <b>※Twitter API 有料化により動作停止中</b> 
             </p>
             </div>
             <div className="flex mb-5 mx-auto max-w-xs">

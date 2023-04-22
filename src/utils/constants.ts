@@ -4,7 +4,7 @@ export const STATIC_IMAGE = "https://tiny-images-mori.s3.ap-northeast-1.amazonaw
 
 export const LIGHT_IMAGE = "/iconmonstr-accessibility-2-240.png";
 
-export const SAKE_IMAGE = "/2020-12-30 18.39.52.jpg";
+export const SAKE_IMAGE = "/my_image.jpg";
 
 export const NOIMAGE = "/iconmonstr-picture-1-240.png";
 
