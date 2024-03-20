@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { NOIMAGE } from '../../utils/constants';
 
 type Props = {
     title: string,
