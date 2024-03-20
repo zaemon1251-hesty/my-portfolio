@@ -41,6 +41,10 @@ export const MyHeader: React.VFC<Props> = () => {
                             </svg>
                         </a>
                     </Link>
+                    <Link target="blank" href="https://drive.google.com/file/d/1SPKozTCQgZ_cKJyT9lxtX1fCa7mZVQMV/view?usp=share_link" legacyBehavior>
+                        <a className="m-2 inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 p-10">My Resume</a>
+                    </Link>
+
                 </nav>
             </div>
         </header>
