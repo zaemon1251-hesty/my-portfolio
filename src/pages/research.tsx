@@ -33,8 +33,8 @@ export const ResearchPage:NextPage<Article> = () => {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <h3><b>発表論文 (Publication)</b></h3> <br />
-                                        <h4><b>国際会議 (International Conference)</b></h4>
+                                        <h3><b>発表論文 (Publications)</b></h3> <br />
+                                        <h4><b>国際会議 (International Conferences)</b></h4>
                                         <ul>
                                             <li>
                                             <b>Yuichiro Mori</b>, Chikara Tanaka, Aru Maekawa, Satoshi Kosugi, Tatsuya Ishigaki, Kotaro Funakoshi, Hiroya Takamura, Manabu Okumura <br />
@@ -42,7 +42,7 @@ export const ResearchPage:NextPage<Article> = () => {
                                             <i>ACL 2025 System Demonstration Track, 2025.</i>
                                             </li>
                                         </ul>
-                                        <h4><b>国内会議 (Domestic Conference) </b></h4>
+                                        <h4><b>国内会議 (Domestic Conferences) </b></h4>
                                         <ul>
                                             <li> <b>森雄一郎</b>，田中智可良，前川在，小杉哲，石垣達也，船越孝太郎，高村大也，奥村学<br />
                                             <strong>サッカー実況中継における付加的情報の提供システムの構築</strong><br />
