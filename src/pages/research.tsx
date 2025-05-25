@@ -33,9 +33,21 @@ export const ResearchPage:NextPage<Article> = () => {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <h3><b>発表論文</b></h3> <br />
-                                        <h4><b>国内会議</b></h4>
+                                        <h3><b>発表論文 (Publication)</b></h3> <br />
+                                        <h4><b>国際会議 (International Conference)</b></h4>
                                         <ul>
+                                            <li>
+                                            <b>Yuichiro Mori</b>, Chikara Tanaka, Aru Maekawa, Satoshi Kosugi, Tatsuya Ishigaki, Kotaro Funakoshi, Hiroya Takamura, Manabu Okumura <br />
+                                            <strong>Live Football Commentary System Providing Background Information</strong> <br />
+                                            <i>ACL 2025 System Demonstration Track, 2025.</i>
+                                            </li>
+                                        </ul>
+                                        <h4><b>国内会議 (Domestic Conference) </b></h4>
+                                        <ul>
+                                            <li> <b>森雄一郎</b>，田中智可良，前川在，小杉哲，石垣達也，船越孝太郎，高村大也，奥村学<br />
+                                            <strong>サッカー実況中継における付加的情報の提供システムの構築</strong><br />
+                                            <i>第263回自然言語処理研究会 (NL263)</i>, 2025.
+                                            </li>
                                             <li> <b>森雄一郎</b>，前川在，小杉哲，船越孝太郎，高村大也，奥村学<br />
                                             <strong>サッカー実況中継を付加的情報の提供という側面から見る</strong><br />
                                             <i>言語処理学会第30回年次大会 (NLP2024)</i>, 2024. (委員特別賞)
