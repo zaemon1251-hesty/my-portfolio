@@ -37,9 +37,11 @@ export const ResearchPage:NextPage<Article> = () => {
                                         <h4><b>国際会議 (International Conferences)</b></h4>
                                         <ul>
                                             <li>
-                                            <b>Yuichiro Mori</b>, Chikara Tanaka, Aru Maekawa, Satoshi Kosugi, Tatsuya Ishigaki, Kotaro Funakoshi, Hiroya Takamura, Manabu Okumura <br />
-                                            <strong>Live Football Commentary System Providing Background Information</strong> <br />
-                                            <i>ACL 2025 System Demonstration Track, 2025.</i>
+                                            <a href="https://aclanthology.org/2025.acl-demo.38/">
+                                                <b>Yuichiro Mori</b>, Chikara Tanaka, Aru Maekawa, Satoshi Kosugi, Tatsuya Ishigaki, Kotaro Funakoshi, Hiroya Takamura, Manabu Okumura <br />
+                                                <strong>Live Football Commentary System Providing Background Information</strong> <br />
+                                                <i>ACL 2025 System Demonstration Track, 2025.</i>
+                                           </a>
                                             </li>
                                         </ul>
                                         <h4><b>国内会議 (Domestic Conferences) </b></h4>
